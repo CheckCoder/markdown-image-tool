@@ -1,0 +1,11 @@
+{
+    "cloud": "qiniu", // 云存储类型，目前仅支持 qiniu
+    "cloudFileNameType": "md5", // 存放在云端文件命名规则，目前仅支持 md5
+    "qiniu": { // qiniu 存储配置
+        "accessKey": "", // 密钥 AccessKey
+        "secretKey": "", // 密钥 SecretKey
+        "bucket": "", // 存储空间名
+        "urlPrefix": "http://yourdomain.com/", // 输出的链接前缀
+        "urlSuffix": "" // 输出的链接后缀
+    }
+}
