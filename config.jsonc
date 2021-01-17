@@ -5,7 +5,7 @@
         "accessKey": "", // 密钥 AccessKey
         "secretKey": "", // 密钥 SecretKey
         "bucket": "", // 存储空间名
-        "urlPrefix": "http://yourdomain.com/", // 输出的链接前缀
-        "urlSuffix": "" // 输出的链接后缀
+        "urlPrefix": "http://yourdomain.com/", // 输出链接的前缀
+        "urlSuffix": "" // 输出链接的后缀
     }
 }
