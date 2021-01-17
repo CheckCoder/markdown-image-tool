@@ -76,6 +76,7 @@ function getImageLocalPath() {
  */
 function copy(text) {
     return new Promise((resolve, reject) => {
+        text = text.replace(/\'/g, "''");
         let command = `Set-Clipboard '${text}'`;
         exec(`powershell.exe ${command}`, (err, stdout, sterr) => {
             if (err) {
