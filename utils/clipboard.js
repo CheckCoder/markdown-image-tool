@@ -1,5 +1,6 @@
 const exec = require('child_process').exec;
 const fileType = require('file-type');
+const iconv = require('iconv-lite');
 
 const tmpFileName = require('./file').tmpFileName;
 const imageType = 'image';
@@ -13,7 +14,8 @@ const fileDropListType = 'fileDropList'
 function getImageLocalPath() {
     return new Promise((resolve, reject) => {
         let command = 
-        `Add-Type -Assembly PresentationCore; \
+        `chcp 65001; \
+        Add-Type -Assembly PresentationCore; \
         if ([Windows.Clipboard]::ContainsImage()) { \
             echo "${imageType}"; \
             $tmpFileName = """${tmpFileName}"""; \
@@ -42,9 +44,9 @@ function getImageLocalPath() {
                 });
             } else {
                 let outLines = stdout.split('\r\n');
-                if (outLines.length >= 2) {
-                    let type = outLines[0];
-                    let path = outLines[1];
+                if (outLines.length >= 3) {
+                    let type = outLines[1];
+                    let path = outLines[2];
                     if (type === imageType) {
                         resolve(path);
                     } else if (type === fileDropListType) {
@@ -61,6 +63,8 @@ function getImageLocalPath() {
                                 err
                             });
                         });
+                    } else {
+                        console.log('all no');
                     }
                 } else {
                     resolve();
