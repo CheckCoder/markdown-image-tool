@@ -4,6 +4,11 @@ const file = require('./utils/file');
 const cloud = require('./utils/cloud');
 const countDown = require('./utils/countDown');
 
+process.on('unhandledRejection', (err) => {
+    console.log('unhandledRejection');
+    console.log(err);
+});
+
 async function main() {
     try {
         countDown.start();
