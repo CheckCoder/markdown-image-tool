@@ -12,7 +12,7 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
 
 ### 2、下载
 
-- [下载release版本](https://github.com/CheckCoder/markdown-image-tool/releases/download/v1.0.0/markdown-image-tool.zip)并解压，如下图所示：
+- [下载release版本](https://github.com/CheckCoder/markdown-image-tool/releases/download/v1.1.0/markdown-image-tool.zip)并解压，如下图所示：
 
     ![](http://check-note-image.scauhelper.club/7482ffe92eea572aec9b9762ebdfa980)
 
@@ -56,7 +56,14 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
 - urlSuffix：输出链接的后缀，如：生成文件名为 `fileName` ，urlPrefix为 `http://domain.com/`，urlSuffix为 `?imageView2/1/w/200/h/200`，则最后粘贴为：`![](http://domain.com/fileName?imageView2/1/w/200/h/200)`。因此可以用于对添加对图片处理的参数。
 具体可以查看 [七牛图片处理接口文档](https://developer.qiniu.com/dora/3683/img-directions-for-use)、[样式分割符](https://developer.qiniu.com/kodo/kb/1327/what-is-the-style-and-the-style-separators)
 
-### 4、常见问题可能原因及解决方法
+#### 使用
+
+- 复制截图/本地文件
+- Ctrl + B
+
+![](http://check-note-image.scauhelper.club/806bf16dfb97d25dd8504820ff7d5910)
+
+### 5、常见问题可能原因及解决方法
 
 当出现问题时会粘贴出错误问题，可以据此判断是什么问题，格式如下：
 ```json
