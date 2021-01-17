@@ -1,0 +1,25 @@
+{
+  "name": "markdown-image-tool",
+  "version": "1.0.0",
+  "description": "Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图床，并粘贴带图片链接的Markdown文本。",
+  "main": "markdown-image-tool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheckCoder/markdown-image-tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheckCoder/markdown-image-tool/issues"
+  },
+  "homepage": "https://github.com/CheckCoder/markdown-image-tool#readme",
+  "dependencies": {
+    "file-type": "^16.1.0",
+    "hjson": "^3.2.2",
+    "md5-file": "^5.0.0",
+    "qiniu": "^7.3.2"
+  }
+}
