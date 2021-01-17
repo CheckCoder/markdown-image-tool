@@ -1,6 +1,5 @@
 const exec = require('child_process').exec;
 const fileType = require('file-type');
-const iconv = require('iconv-lite');
 
 const tmpFileName = require('./file').tmpFileName;
 const imageType = 'image';
