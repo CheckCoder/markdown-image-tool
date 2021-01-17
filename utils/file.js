@@ -21,7 +21,10 @@ function deleteTmpFile() {
     return new Promise((resolve, reject) => {
         fs.unlink(tmpFileName, (err) => {
             if (err) {
-                reject(err)
+                reject({
+                    msg: '删除临时文件失败',
+                    err
+                })
             } else {
                 resolve();
             }

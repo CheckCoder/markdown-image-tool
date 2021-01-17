@@ -27,12 +27,17 @@ function uploadFile(config, localPath, cloudFileName) {
         
             formUploader.putFile(uploadToken, cloudFileName, localPath, putExtra, (respErr, respBody, respInfo) => {
                 if (respErr) {
-                    reject(respErr);
-                }
-                if (respInfo.statusCode == 200) {
+                    reject({
+                        msg: 'qiniu 上传文件失败',
+                        err: respErr
+                    });
+                } else if (respInfo.statusCode == 200) {
                     resolve(`${urlPrefix}${cloudFileName}${urlSuffix}`);
                 } else {
-                    reject(respBody);
+                    reject({
+                        msg: 'qiniu 上传文件失败',
+                        err: respBody
+                    });
                 }
             });
         }

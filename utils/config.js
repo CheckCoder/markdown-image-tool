@@ -14,15 +14,21 @@ function get() {
             if (!err) {
                 configPath = checkPersonalConfigPath;
             }
-            fs.readFile(configPath, 'utf8', (error, data) => {
-                if (error) {
-                    reject(error);
+            fs.readFile(configPath, 'utf8', (err, data) => {
+                if (err) {
+                    reject({
+                        msg: '读取配置文件失败',
+                        err
+                    });
                 } else {
                     try {
                         let dataJson = hjson.parse(data);
                         resolve(dataJson);
-                    } catch (error) {
-                        reject(error)
+                    } catch (err) {
+                        reject({
+                            msg: '解析配置文件失败',
+                            err
+                        })
                     }
                 }
             });

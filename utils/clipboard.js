@@ -31,9 +31,15 @@ function getImageLocalPath() {
         };`;
         exec(`powershell.exe ${command}`, (err, stdout, stderr) => {
             if (err) {
-                reject(err);
+                reject({
+                    msg: '执行 powershell.exe 失败',
+                    err
+                });
             } else if (stderr){
-                reject(stderr);
+                reject({
+                    msg: '执行 powershell.exe 失败',
+                    err: stderr
+                });
             } else {
                 let outLines = stdout.split('\r\n');
                 if (outLines.length >= 2) {
@@ -49,8 +55,11 @@ function getImageLocalPath() {
                             } else {
                                 resolve();
                             }
-                        }).catch((error) => {
-                            reject(error);
+                        }).catch((err) => {
+                            reject({
+                                msg: '判断文件类型失败',
+                                err
+                            });
                         });
                     }
                 } else {
@@ -67,12 +76,18 @@ function getImageLocalPath() {
  */
 function copy(text) {
     return new Promise((resolve, reject) => {
-        let command = `Set-Clipboard """${text}"""`;
+        let command = `Set-Clipboard '''${text}'''`;
         exec(`powershell.exe ${command}`, (err, stdout, sterr) => {
             if (err) {
-                reject(err);
+                reject({
+                    msg: '使用 powershell.exe 复制文本失败',
+                    err
+                });
             } else if (sterr) {
-                reject(sterr);
+                reject({
+                    msg: '使用 powershell.exe 复制文本失败',
+                    err: sterr
+                });
             } else {
                 resolve();
             }

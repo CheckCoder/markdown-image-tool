@@ -12,9 +12,13 @@ function start() {
 /**
  * 倒计时打点
  */
-function dot() {
+function dot(showLog = true) {
     _now = new Date();
-    console.log('打点时间：', _now, _now.getTime() - _start.getTime());
+    let experience = _now.getTime() - _start.getTime();
+    if (showLog) {
+        console.log('打点时间：', _now, experience);
+    }
+    return experience;
 }
 
 module.exports = {
