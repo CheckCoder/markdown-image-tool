@@ -8,10 +8,17 @@ const tmpFileName = 'tmpFile.png';
  * @param {object} config 配置
  * @param {string} localPath 文件本地路径
  */
-function createName(config, localPath) {
-    if (config.cloudFileNameType === 'md5') {
-        return md5File(localPath);
+async function createName(config, localPath) {
+    let {
+        type,
+        prefix,
+        suffix
+    } = config.cloudFileName;
+    let name = '';
+    if (type === 'md5') {
+        name = await md5File(localPath);
     }
+    return `${prefix}${name}${suffix}`;
 }
 
 /**
