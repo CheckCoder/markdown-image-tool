@@ -28,7 +28,11 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
 ``` jsonc
 {
     "cloud": "qiniu", // 云存储类型，目前仅支持 qiniu
-    "cloudFileNameType": "md5", // 存放在云端文件命名规则，目前仅支持 md5
+    "cloudFileName": { // 存放在云端文件名
+        "type": "md5", // 命名规则，目前仅支持 md5
+        "prefix": "", // 文件名前缀
+        "suffix": "" // 文件名后缀
+    },
     "qiniu": { // qiniu 存储配置
         "accessKey": "", // 密钥 AccessKey
         "secretKey": "", // 密钥 SecretKey
@@ -38,6 +42,11 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
     }
 }
 ```
+工具的工作流程是这样的：
+1. 获取剪切板中的图片
+2. 根据配置生成文件名 `cloudFileName`
+3. 上传文件，云存储中的文件名就是生成的 `cloudFileName`
+4. 粘贴 `![](urlPrefix+cloudFileName+urlSuffix)`
 
 #### qiniu 配置
 
