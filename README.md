@@ -12,7 +12,7 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
 
 ### 2、下载
 
-- [下载release版本](https://github.com/CheckCoder/markdown-image-tool/releases/download/v1.1.0/markdown-image-tool.zip)并解压，如下图所示：
+- [下载release版本 markdown-image-tool.zip ](https://github.com/CheckCoder/markdown-image-tool/releases)并解压，如下图所示：
 
     ![](http://check-note-image.scauhelper.club/7482ffe92eea572aec9b9762ebdfa980)
 
