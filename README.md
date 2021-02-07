@@ -94,6 +94,20 @@ Markdown贴图工具，支持通过快捷键将剪切板中的图片上传到图
 
 其它问题可以[提issue](https://github.com/CheckCoder/markdown-image-tool/issues/new)
 
+### 6、自启动
+
+1. `win + r` 打开运行，然后输入 `%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 打开 `Startup` 文件夹。
+
+    ![](http://check-note-image.scauhelper.club/c2ae871262ab288d6bc71da714f8b9f1)
+
+2. 把 `AutoHotkey` 复制快捷方式到 `Startup` 文件夹。
+
+    ![](http://check-note-image.scauhelper.club/261a51b4ce73a4b4919d20e5f82de31f)
+
+3. 如果需要关闭自启动，可以把复制进来的快捷方式删除，或者在任务管理器的启动中禁用。
+
+    ![](http://check-note-image.scauhelper.club/af351a56cfae164182829d3d17dc9f8a)
+
 ## 开发说明
 
 ### 实现
